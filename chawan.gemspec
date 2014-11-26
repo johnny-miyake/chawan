@@ -20,6 +20,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.1", ">= 3.1.0"
+  spec.add_development_dependency "guard", "~> 2.9"
+  spec.add_development_dependency "guard-rspec", "~> 4.3"
+  spec.add_development_dependency "pry-byebug", "~> 2.0"
   spec.add_dependency "faraday", "~> 0.9", ">= 0.9.0"
   spec.add_dependency "json", "~> 1.8", ">= 1.8.1"
 end

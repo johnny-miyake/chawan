@@ -4,10 +4,6 @@ describe Chawan::Client do
   let(:client){Chawan::Client.new}
   subject {client}
 
-  before do
-    Chawan.config api_key: "example_key", api_version: "example_ver"
-  end
-
   describe "initialize" do
     context "without api_key" do
       context "nor default api_key" do
@@ -31,6 +27,6 @@ describe Chawan::Client do
     before do
       allow(client).to receive(:connection).and_return stubbed_connections
     end
-    it {expect(client.get "/rooms").to be_a Chawan::Response}
+    it {expect(client.get "/#{Chawan::API_VERSION}/rooms").to be_a Chawan::Response}
   end
 end

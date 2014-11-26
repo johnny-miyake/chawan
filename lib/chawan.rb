@@ -21,6 +21,7 @@ module Chawan
   end
 end
 
+require "chawan/endpoint_builder"
 require "chawan/client"
 require "chawan/response"
 require "chawan/room"

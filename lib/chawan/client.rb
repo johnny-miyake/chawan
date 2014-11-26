@@ -18,8 +18,8 @@ module Chawan
       end
     end
 
-    def get path
-      response = connection.get "/#{Chawan::API_VERSION}/#{path}"
+    def get endpoint
+      response = connection.get endpoint
       Chawan::Response.new status: response.status, response_body: response.body
     end
 
