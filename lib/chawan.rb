@@ -18,6 +18,17 @@ module Chawan
       @@config = @@config.with!(options) unless options.empty?
       @@config
     end
+
+    def me
+      client = Chawan::Client.new
+      resp = client.get Chawan::EndpointBuilder.new(:me).to_ep
+      if resp.success?
+        Chawan::Me.new resp.body
+      else
+        raise Chawan::Error::FailureResponseError
+          .new "The request failed. The received response body is:\n#{resp.body}"
+      end
+    end
   end
 end
 
@@ -26,3 +37,4 @@ require "chawan/client"
 require "chawan/response"
 require "chawan/room"
 require "chawan/room_collection"
+require "chawan/me"
