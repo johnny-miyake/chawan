@@ -1,4 +1,4 @@
-# Chawan [![Build Status](https://travis-ci.org/johnny-miyake/chawan.svg?branch=master)](https://travis-ci.org/johnny-miyake/chawan)
+# Chawan [![Circle CI](https://circleci.com/gh/johnny-miyake/chawan/tree/master.svg?style=svg)](https://circleci.com/gh/johnny-miyake/chawan/tree/master)
 
 TODO: Write a gem description
 
