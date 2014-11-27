@@ -16,7 +16,7 @@ module Chawan
     class << self
       def all
         client = Chawan::Client.new
-        resp = client.get Chawan::EndpointBuilder.new(:rooms).to_ep
+        resp = client.get "/v1/rooms"
         if resp.success?
           rooms = resp.body.each{|r| Chawan::Room.new r}
           Chawan::RoomCollection.new rooms
@@ -28,7 +28,7 @@ module Chawan
 
       def find id
         client = Chawan::Client.new
-        resp = client.get Chawan::EndpointBuilder.new(rooms: {id: id}).to_ep
+        resp = client.get "/v1/rooms/#{id}"
         if resp.success?
           Chawan::Room.new resp.body
         else

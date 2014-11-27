@@ -21,7 +21,7 @@ module Chawan
 
     def me
       client = Chawan::Client.new
-      resp = client.get Chawan::EndpointBuilder.new(:me).to_ep
+      resp = client.get "/v1/me"
       if resp.success?
         Chawan::Me.new resp.body
       else
@@ -32,9 +32,9 @@ module Chawan
   end
 end
 
-require "chawan/endpoint_builder"
 require "chawan/client"
 require "chawan/response"
 require "chawan/room"
 require "chawan/room_collection"
 require "chawan/me"
+require "chawan/status"
